@@ -20,15 +20,15 @@ const trueButton = document.getElementById('true-button');
 const falseButton = document.getElementById('false-button');
 const scoreElement = document.getElementById('score');
 
-// Estilo da fonte usado em todo o jogo
+// Estilos com base no seu código CSS
 const defaultFontStyle = {
     fontFamily: 'Arial, sans-serif',
-    fontSize: '16px',
+    fontSize: '2em',   // Apliquei o tamanho 2em, conforme o #question no CSS
     fontWeight: 'normal',
-    color: 'black'
+    color: '#333',     // Apliquei a cor #333 conforme o CSS
 };
 
-// Aplica o estilo padrão para a fonte no jogo
+// Função para aplicar o estilo de fonte correto a todos os elementos
 function applyDefaultFontStyle() {
     questionElement.style.fontFamily = defaultFontStyle.fontFamily;
     questionElement.style.fontSize = defaultFontStyle.fontSize;
@@ -36,9 +36,13 @@ function applyDefaultFontStyle() {
     questionElement.style.color = defaultFontStyle.color;
     
     resultMessageElement.style.fontFamily = defaultFontStyle.fontFamily;
-    resultMessageElement.style.fontSize = defaultFontStyle.fontSize;
+    resultMessageElement.style.fontSize = '1.5em'; // Ajustei para 1.5em conforme o #result-message no CSS
     resultMessageElement.style.fontWeight = defaultFontStyle.fontWeight;
     resultMessageElement.style.color = defaultFontStyle.color;
+    
+    scoreElement.style.fontFamily = defaultFontStyle.fontFamily;
+    scoreElement.style.fontSize = '2em'; // Apliquei o 2em conforme o #score-section no CSS
+    scoreElement.style.color = defaultFontStyle.color;
 }
 
 function showQuestion() {
@@ -104,4 +108,3 @@ falseButton.addEventListener('click', () => checkAnswer(false));
 
 // Carrega a primeira pergunta ao iniciar o jogo
 showQuestion();
-
