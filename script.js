@@ -63,18 +63,17 @@ function endRound() {
     resultMessageElement.style.color = 'black';
     resultMessageElement.style.textTransform = 'uppercase';
 
-    // Zera a pontuação e reinicia o índice das perguntas
-    score = 0;
-    currentQuestionIndex = 0;
-
     // Atualiza a pontuação na tela
     scoreElement.textContent = `Pontuação: ${score}`;
 
-    // Limpa a mensagem de resultado após 5 segundos e reinicia o jogo
+    // Aguardar 30 segundos e reiniciar o jogo
     setTimeout(() => {
-        resultMessageElement.textContent = ''; // Limpa a mensagem de resultado
-        showQuestion(); // Recarrega as perguntas (inicia uma nova rodada)
-    }, 15000); // A mensagem de resultado será exibida por 5 segundos
+        // Limpa a mensagem de resultado final
+        resultMessageElement.textContent = '';
+        score = 0; // Zera a pontuação
+        currentQuestionIndex = 0; // Reseta o índice da pergunta
+        showQuestion(); // Carrega a primeira pergunta novamente
+    }, 30000); // 30 segundos de espera para reiniciar o jogo
 }
 
 trueButton.addEventListener('click', () => checkAnswer(true));
