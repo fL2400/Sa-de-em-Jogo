@@ -7,6 +7,9 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #ADD8E6;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -16,6 +19,7 @@ body {
     padding: 0;
     text-align: center;
 }
+
 
 .container {
     background-color: rgba(255, 255, 255, 0.8);
