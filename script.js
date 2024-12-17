@@ -38,14 +38,43 @@ function checkAnswer(isTrue) {
         resultMessageElement.style.color = 'red';
     }
 
+    // Atraso de 2 segundos antes de avançar para a próxima pergunta ou encerrar
     setTimeout(() => {
-        currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
-        showQuestion();
+        // Avança para a próxima pergunta ou finaliza a rodada
+        currentQuestionIndex++;
+
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        } else {
+            endRound(); // Se for a última pergunta, finaliza a rodada
+        }
     }, 2000);
+}
+
+function endRound() {
+    // Exibe a mensagem final dependendo da pontuação
+    if (score > 6) {
+        resultMessageElement.textContent = "PARABÉNS, VOCÊ É UM ALIADO DO SUS!";
+    } else {
+        resultMessageElement.textContent = "VAMOS CONTINUAR APRENDENDO SOBRE O SUS?";
+    }
+
+    // Zera a pontuação e reinicia o índice das perguntas
+    score = 0;
+    currentQuestionIndex = 0;
+
+    // Atualiza a pontuação na tela
+    scoreElement.textContent = `Pontuação: ${score}`;
+
+    // Limpa a mensagem de resultado após 5 segundos e reinicia o jogo
+    setTimeout(() => {
+        resultMessageElement.textContent = ''; // Limpa a mensagem de resultado
+        showQuestion(); // Recarrega as perguntas (inicia uma nova rodada)
+    }, 5000); // A mensagem de resultado será exibida por 5 segundos
 }
 
 trueButton.addEventListener('click', () => checkAnswer(true));
 falseButton.addEventListener('click', () => checkAnswer(false));
 
+// Carrega a primeira pergunta ao iniciar o jogo
 showQuestion();
-
