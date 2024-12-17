@@ -20,6 +20,27 @@ const trueButton = document.getElementById('true-button');
 const falseButton = document.getElementById('false-button');
 const scoreElement = document.getElementById('score');
 
+// Estilo da fonte usado em todo o jogo
+const defaultFontStyle = {
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '16px',
+    fontWeight: 'normal',
+    color: 'black'
+};
+
+// Aplica o estilo padrão para a fonte no jogo
+function applyDefaultFontStyle() {
+    questionElement.style.fontFamily = defaultFontStyle.fontFamily;
+    questionElement.style.fontSize = defaultFontStyle.fontSize;
+    questionElement.style.fontWeight = defaultFontStyle.fontWeight;
+    questionElement.style.color = defaultFontStyle.color;
+    
+    resultMessageElement.style.fontFamily = defaultFontStyle.fontFamily;
+    resultMessageElement.style.fontSize = defaultFontStyle.fontSize;
+    resultMessageElement.style.fontWeight = defaultFontStyle.fontWeight;
+    resultMessageElement.style.color = defaultFontStyle.color;
+}
+
 function showQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
@@ -59,9 +80,11 @@ function endRound() {
         resultMessageElement.textContent = "VAMOS CONTINUAR APRENDENDO SOBRE O SUS?";
     }
 
-    // Aplica estilo para a mensagem: azul e maiúsculas
-    resultMessageElement.style.color = 'black';
-    resultMessageElement.style.textTransform = 'uppercase';
+    // Aplica o mesmo estilo de fonte do jogo
+    applyDefaultFontStyle();
+
+    // Aplica outras modificações de estilo específicas para a mensagem de resultado final
+    resultMessageElement.style.textTransform = 'uppercase'; // Deixa a mensagem em maiúsculas
 
     // Atualiza a pontuação na tela
     scoreElement.textContent = `Pontuação: ${score}`;
@@ -81,3 +104,4 @@ falseButton.addEventListener('click', () => checkAnswer(false));
 
 // Carrega a primeira pergunta ao iniciar o jogo
 showQuestion();
+
