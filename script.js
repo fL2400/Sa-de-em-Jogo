@@ -60,7 +60,7 @@ function endRound() {
     }
 
     // Aplica estilo para a mensagem: azul e maiúsculas
-    resultMessageElement.style.color = 'blue';
+    resultMessageElement.style.color = 'black';
     resultMessageElement.style.textTransform = 'uppercase';
 
     // Zera a pontuação e reinicia o índice das perguntas
@@ -74,7 +74,7 @@ function endRound() {
     setTimeout(() => {
         resultMessageElement.textContent = ''; // Limpa a mensagem de resultado
         showQuestion(); // Recarrega as perguntas (inicia uma nova rodada)
-    }, 5000); // A mensagem de resultado será exibida por 5 segundos
+    }, 15000); // A mensagem de resultado será exibida por 5 segundos
 }
 
 trueButton.addEventListener('click', () => checkAnswer(true));
