@@ -6,16 +6,21 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-image: url('images/background.jpg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo semitransparente */
     border-radius: 10px;
     padding: 20px;
     width: 90%;
@@ -92,3 +97,4 @@ footer {
     margin-top: 20px;
     color: #777;
 }
+
