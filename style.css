@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('images/background.jpg.png');
+    background-image: url('background.jpg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -20,7 +20,7 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo semitransparente */
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     padding: 20px;
     width: 90%;
